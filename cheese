@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>waxmaty</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+    div[target=privet]{
+        background-color: white;
+    }
+    div[target=wws]{
+        background-color: black;
+    }
+    button[target=salam]{
+        background-color: yellow;
+    }
+    div div:nth-child(2n){
+        color: yellow;
+    }
+     div div:nth-child(2n+1){
+        color: violet;
+    }
+    div p{
+        font-size: 70px;
+        font-weight: bold;
+        display: grid;
+    }
+    div:nth-child(2n) {
+    color: red;
+    }
+
+    div:nth-child(2n+1) {
+    color: blue;
+    }
+</style>
+</head>
+<body >
+<div class="container" style="margin: 0;max-width: 80%;max-height: 80%;letter-spacing: 5px;text-align: center">
+    <button class="btn btn-primary" target="salam" onclick="func1()" style="margin-bottom: 4px;color: black">BLACK</button>
+    <button class="btn btn-primary" onclick="func2()" style="margin-bottom: 4px;">WHITE</button>
+    <button class="btn btn-primary" target="salam" onclick="func3()" style="margin-bottom: 4px;color: black;">BLUE</button>
+    <button class="btn btn-primary" onclick="func5()">Wood</button>
+    <button class="btn btn-primary" target="salam" onclick="func4()" style="color: black">BOYZ COLOR</button>
+    <button class="btn btn-primary" onclick="deg()">Rotate</button>
+    <p id="e"></p>
+    <div id="swap_board" class="aitu">
+
+<div class="row" >
+    <div class="col-1"></div>
+    <div class="col-1" id="deg_left_1" style="transform: rotate(180deg);"><p>A</p></div>
+    <div class="col-1" id="deg_left_2" style="transform: rotate(180deg);"><p>B</p></div>
+    <div class="col-1" id="deg_left_3" style="transform: rotate(180deg);"><p>C</p></div>
+    <div class="col-1" id="deg_left_4"style="transform: rotate(180deg);"><p>D</p></div>
+    <div class="col-1" id="deg_left_5"style="transform: rotate(180deg);"><p>E</p></div>
+    <div class="col-1" id="deg_left_6"style="transform: rotate(180deg);"><p>F</p></div>
+    <div class="col-1" id="deg_left_7"style="transform: rotate(180deg);"><p>G</p></div>
+    <div class="col-1" id="deg_left_8"style="transform: rotate(180deg);"><p>H</p></div>
+    <div class="col-1"></div>
+
+
+
+</div>
+<div class="row">
+    <div class="col-1" id="deg_left_9"><h2>8</h2></div>
+    <div class="col-1" style="background-color: white;border-left:5px solid violet;border-top: 5px solid violet;" id="swap_color1"></div>
+    <div class="col-1" style="border-top: 5px solid violet;" ></div>
+    <div class="col-1" style="background-color: white;border-top: 5px solid violet;" id="swap_color2"></div>
+    <div class="col-1" style="border-top: 5px solid violet;"></div>
+    <div class="col-1" style="background-color: white;border-top: 5px solid violet;" id="swap_color3"></div>
+    <div class="col-1" style="border-top: 5px solid violet;"></div>
+    <div class="col-1" style="background-color: white;border-top: 5px solid violet;" id="swap_color4"></div>
+    <div class="col-1" style="border-top: 5px solid violet;border-right: 5px solid violet"></div>
+    <div class="col-1" id="deg_right_16" style="transform: rotate(180deg);"><h2>8</h2></div>
+
+</div>
+<div class="row">
+    <div class="col-1" id="deg_left_10"><h2>7</h2></div>
+    <div class="col-1"  style="border-left:5px solid violet "></div>
+    <div class="col-1" style="background-color: white" id="swap_color5"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color6"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color7"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white;border-right: 5px solid violet" id="swap_color8"></div>
+    <div class="col-1" id="deg_right_15" style="transform: rotate(180deg);"><h2>7</h2></div>
+</div>
+<div class="row">
+    <div class="col-1" id="deg_left_11"><h2>6</h2></div>
+    <div class="col-1" style="background-color: white;border-left:5px solid violet " id="swap_color9"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color10"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color11"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color12"></div>
+    <div class="col-1" style=";border-right: 5px solid violet"></div>
+    <div class="col-1" id="deg_right_14" style="transform: rotate(180deg);"><h2>6</h2></div>
+</div>
+<div class="row">
+    <div class="col-1" id="deg_left_12"><h2>5</h2></div>
+    <div class="col-1" style="border-left:5px solid violet "></div>
+    <div class="col-1" style="background-color: white" id="swap_color13"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color14"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color15"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white;;border-right: 5px solid violet" id="swap_color16"></div>
+    <div class="col-1" id="deg_right_13" style="transform: rotate(180deg);"><h2>5</h2></div>
+</div>
+<div class="row">
+    <div class="col-1" id="deg_left_13">4</div>
+    <div class="col-1" style="background-color: white;border-left:5px solid violet " id="swap_color17"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color18"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color19"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color20"></div>
+    <div class="col-1" style=";border-right: 5px solid violet" ></div>
+    <div class="col-1" id="deg_right_12" style="transform: rotate(180deg);">4</div>
+</div>
+<div class="row">
+    <div class="col-1" id="deg_left_14">3</div>
+    <div class="col-1" style="border-left:5px solid violet "></div>
+    <div class="col-1" style="background-color: white;" id="swap_color21"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color22"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color23"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white;border-right: 5px solid violet" id="swap_color24"></div>
+    <div class="col-1" id="deg_right_11" style="transform: rotate(180deg);">3</div>
+</div>
+<div class="row">
+    <div class="col-1" id="deg_left_15">2</div>
+    <div class="col-1" style="background-color: white;border-left:5px solid violet " id="swap_color25"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color26"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color27"></div>
+    <div class="col-1"></div>
+    <div class="col-1" style="background-color: white" id="swap_color28"></div>
+    <div class="col-1" style=";border-right: 5px solid violet"></div>
+    <div class="col-1" id="deg_right_10" style="transform: rotate(180deg);">2</div>
+</div>
+<div class="row">
+    <div class="col-1" id="deg_left_16">1</div>
+    <div class="col-1"  style="border-bottom: 5px solid violet;border-left:5px solid violet "></div>
+    <div class="col-1" style="background-color: white;border-bottom: 5px solid violet;" id="swap_color29"></div>
+    <div class="col-1" style="border-bottom: 5px solid violet;" ></div>
+    <div class="col-1" style="background-color: white;border-bottom: 5px solid violet;" id="swap_color30"></div>
+    <div class="col-1" style="border-bottom: 5px solid violet;"></div>
+    <div class="col-1" style="background-color: white;border-bottom: 5px solid violet;" id="swap_color31"></div>
+    <div class="col-1" style="border-bottom: 5px solid violet;"></div>
+    <div class="col-1" style="background-color: white;border-bottom:5px solid violet;border-right: 5px solid violet" id="swap_color32"></div>
+    <div class="col-1" id="deg_right_9" style="transform: rotate(180deg);">1</div>
+</div>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-1" id="deg_right_8" ><h1>A</h1></div>
+    <div class="col-1" id="deg_right_7"><h1>B</h1></div>
+    <div class="col-1" id="deg_right_6"><h1>C</h1></div>
+    <div class="col-1" id="deg_right_5"><h1>D</h1></div>
+    <div class="col-1" id="deg_right_4" ><h1>E</h1></div>
+    <div class="col-1" id="deg_right_3" ><h1>F</h1></div>
+    <div class="col-1" id="deg_right_2" ><h1>G</h1></div>
+    <div class="col-1" id="deg_right_1"><h1>H</h1></div>
+    <div class="col-1"></div>
+</div>
+        <div>
+        <div style="transform: rotate(-180deg);" target="privet">
+            <input class = "btn btn-primary"  type="button" id="myBtn" value="ANGEL" onclick="myFunc1 ()" style="background-color: blue;">
+            <h1 id="demo" style="letter-spacing: 50px">60 : 00</h1>
+        </div>
+        <br>
+
+        <div target="wws" >
+            <input class = "btn btn-primary"  type="button" id="myBtn1" value="DEMON" onclick="myFunc ()" style="background-color: deeppink;">
+            <h1 id="demoq" style="letter-spacing: 15px">60 : 00</h1>
+        </div>
+            <button type="submit" onclick="aitug()" >START </button>
+            <p id="x"></p>
+    </div>
+
+<div>
+    <p>
+        Player 1's figures is WHITE
+    </p>
+</div>
+    <div>
+        <p>
+            Player 2's figure is BLack
+        </p>
+    </div>
+</div>
+
+
+
+<script>
+    var aitu = 0;
+    var z= 0;
+    var l = 5000;
+    var lo = 5000;
+    function func1() {
+        document.getElementById("swap_color1").style.backgroundColor = "black";
+        document.getElementById("swap_color2").style.backgroundColor = "black";
+        document.getElementById("swap_color3").style.backgroundColor = "black";
+        document.getElementById("swap_color4").style.backgroundColor = "black";
+        document.getElementById("swap_color5").style.backgroundColor = "black";
+        document.getElementById("swap_color6").style.backgroundColor = "black";
+        document.getElementById("swap_color7").style.backgroundColor = "black";
+        document.getElementById("swap_color8").style.backgroundColor = "black";
+        document.getElementById("swap_color9").style.backgroundColor = "black";
+        document.getElementById("swap_color10").style.backgroundColor = "black";
+        document.getElementById("swap_color11").style.backgroundColor = "black";
+        document.getElementById("swap_color12").style.backgroundColor = "black";
+        document.getElementById("swap_color13").style.backgroundColor = "black";
+        document.getElementById("swap_color14").style.backgroundColor = "black";
+        document.getElementById("swap_color15").style.backgroundColor = "black";
+        document.getElementById("swap_color16").style.backgroundColor = "black";
+        document.getElementById("swap_color17").style.backgroundColor = "black";
+        document.getElementById("swap_color18").style.backgroundColor = "black";
+        document.getElementById("swap_color19").style.backgroundColor = "black";
+        document.getElementById("swap_color20").style.backgroundColor = "black";
+        document.getElementById("swap_color21").style.backgroundColor = "black";
+        document.getElementById("swap_color22").style.backgroundColor = "black";
+        document.getElementById("swap_color23").style.backgroundColor = "black";
+        document.getElementById("swap_color24").style.backgroundColor = "black";
+        document.getElementById("swap_color25").style.backgroundColor = "black";
+        document.getElementById("swap_color26").style.backgroundColor = "black";
+        document.getElementById("swap_color27").style.backgroundColor = "black";
+        document.getElementById("swap_color28").style.backgroundColor = "black";
+        document.getElementById("swap_color29").style.backgroundColor = "black";
+        document.getElementById("swap_color30").style.backgroundColor = "black";
+        document.getElementById("swap_color31").style.backgroundColor = "black";
+        document.getElementById("swap_color32").style.backgroundColor = "black";
+    }
+    function func2() {
+        document.getElementById("swap_color1").style.backgroundColor = "white";
+        document.getElementById("swap_color2").style.backgroundColor = "white";
+        document.getElementById("swap_color3").style.backgroundColor = "white";
+        document.getElementById("swap_color4").style.backgroundColor = "white";
+        document.getElementById("swap_color5").style.backgroundColor = "white";
+        document.getElementById("swap_color6").style.backgroundColor = "white";
+        document.getElementById("swap_color7").style.backgroundColor = "white";
+        document.getElementById("swap_color8").style.backgroundColor = "white";
+        document.getElementById("swap_color9").style.backgroundColor = "white";
+        document.getElementById("swap_color10").style.backgroundColor = "white";
+        document.getElementById("swap_color11").style.backgroundColor = "white";
+        document.getElementById("swap_color12").style.backgroundColor = "white";
+        document.getElementById("swap_color13").style.backgroundColor = "white";
+        document.getElementById("swap_color14").style.backgroundColor = "white";
+        document.getElementById("swap_color15").style.backgroundColor = "white";
+        document.getElementById("swap_color16").style.backgroundColor = "white";
+        document.getElementById("swap_color17").style.backgroundColor = "white";
+        document.getElementById("swap_color18").style.backgroundColor = "white";
+        document.getElementById("swap_color19").style.backgroundColor = "white";
+        document.getElementById("swap_color20").style.backgroundColor = "white";
+        document.getElementById("swap_color21").style.backgroundColor = "white";
+        document.getElementById("swap_color22").style.backgroundColor = "white";
+        document.getElementById("swap_color23").style.backgroundColor = "white";
+        document.getElementById("swap_color24").style.backgroundColor = "white";
+        document.getElementById("swap_color25").style.backgroundColor = "white";
+        document.getElementById("swap_color26").style.backgroundColor = "white";
+        document.getElementById("swap_color27").style.backgroundColor = "white";
+        document.getElementById("swap_color28").style.backgroundColor = "white";
+        document.getElementById("swap_color29").style.backgroundColor = "white";
+        document.getElementById("swap_color30").style.backgroundColor = "white";
+        document.getElementById("swap_color31").style.backgroundColor = "white";
+        document.getElementById("swap_color32").style.backgroundColor = "white";
+    }
+
+    function func3() {
+
+        try{
+            //throw "error, nowadays";
+
+
+
+        }catch (e) {
+            console.log(e);
+
+
+            document.getElementById("e");
+            document.getElementById("e").innerHTML=e;
+            console.log(e);
+
+        }
+        finally{
+            console.log('POTOM DAYIN BOLAD')
+        }
+    }
+
+    function func4() {
+        var elements = document.getElementsByClassName('col-1');
+        for(var i = 0; i < elements.length; i++){
+            elements[i].style.backgroundColor = "#FF43DD";
+        }
+    }
+    function func5() {
+        var elements = document.getElementsByClassName('col-1');
+        for(var i = 0; i < elements.length; i++){
+            elements[i].style.backgroundColor = "#AE6626";
+        }
+    }
+    var a = 0;
+    function deg(){
+        if (a == 0){
+            document.getElementById("swap_board").style.transform = "rotate(180deg)";
+
+            a = 1;
+        }
+
+
+
+        else {
+            document.getElementById("swap_board").style.transform = "rotate(360deg)";
+
+            a = 0;
+        }
+    }
+
+
+
+    function myFunc() {
+        try {
+            if (lo > 0) {
+                aitu = 0;
+                z = 1;
+                lol = 1;
+            }
+            lol = 1;
+            var countDownDate = new Date().getTime() + l;
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+
+                var distance = countDownDate - now;
+                l = distance;
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                document.getElementById("demo").innerHTML = minutes + " : " + seconds;
+                if (aitu == 1) {
+                    clearInterval(x);
+                }
+                
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "lose";
+                }
+            });
+        } catch (e) {
+            throw new e;
+        } finally {
+            console.log("MyFunc Started");
+        }
+    }
+
+    function myFunc1() {
+        try {
+            if (l > 0) {
+                aitu = 1;
+                z = 0;
+                lol = 1;
+            }
+            lol = 1;
+            var countDownDate = new Date().getTime() + lo;
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+
+                var distance = countDownDate - now;
+                lo = distance;
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                document.getElementById("demoq").innerHTML = minutes + " : " + seconds;
+                if (z == 1) {
+                    clearInterval(x);
+                }
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demoq").innerHTML = "lose";
+                }
+            });
+        } catch (e) {
+            throw new e;
+        } finally {
+            console.log("myFunc1 starting..");
+        }
+
+    }
+
+    function rtt() {
+        document.querySelector("div").style.transform = "rotate(180deg)";
+    }
+    function aitug() {
+
+
+        try {
+
+
+        } catch (x) {
+
+            throw "error,this function is not ready";
+        } finally {
+            console.log('POTOM DAYIN BOLAD')
+        }
+
+    }
+
+
+
+</script>
+</div>
+</body>
+<style>
+
+    body{
+        font-family: 'Arial';
+        display: gridx;
+
+
+    }
+    #swap_board{
+transition: all 2s ease-in-out;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .col-1{
+        color: white;
+        background-color:black;
+        padding-top: 35px;
+        padding-bottom: 36px;
+        text-align: center;
+    }
+
+</style>
+</html>
